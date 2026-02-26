@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="bg-[#171717] py-6">
+    <header className="bg-[#0c1117] w-full py-5 px-32">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Image src={Logo} alt="WebTech logo" width={51} height={30} />
