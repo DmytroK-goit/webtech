@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import HowWorks from "@/components/howWorks";
+import Reasons from "@/components/reasons";
 import Team from "@/components/team";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <HowWorks />
       <Team />
+      <Reasons />
 
       <footer>
         <Footer />

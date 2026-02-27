@@ -1,0 +1,16 @@
+.reasons_section {
+  position: relative;
+  background-image: url("../img/reasons/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+.reasons_section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: -1;
+}
