@@ -4,6 +4,7 @@ import Hero from "@/components/hero";
 import HowWorks from "@/components/howWorks";
 import Reasons from "@/components/reasons";
 import Team from "@/components/team";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <HowWorks />
       <Team />
       <Reasons />
+      <Testimonials />
 
       <footer>
         <Footer />
