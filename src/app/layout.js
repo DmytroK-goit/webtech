@@ -12,6 +12,16 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+export const metadata = {
+  title: "Wertech — Digital & Technology Solutions",
+  description:
+    "Wertech is a modern digital company providing innovative web solutions, UI/UX design, and technology services for growing businesses.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
