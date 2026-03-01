@@ -9,7 +9,10 @@ import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#141d26] text-gray-400 py-16 font-sans flex flex-col min-h-105">
+    <footer
+      id="footer"
+      className="bg-[#141d26] text-gray-400 py-16 font-sans flex flex-col min-h-105"
+    >
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 flex-1">
         <div>
           <h3 className="text-blue-500 uppercase tracking-widest text-sm font-bold mb-6">

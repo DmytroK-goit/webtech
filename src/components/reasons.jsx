@@ -1,7 +1,10 @@
 import s from "../scss/reasons.module.scss";
 export default function Reasons() {
   return (
-    <section className={`${s.reasons_section} w-full h-310 pt-37 pl-30`}>
+    <section
+      id="why_us"
+      className={`${s.reasons_section} w-full h-310 pt-37 pl-30`}
+    >
       <div className=" flex flex-col w-1/3 border-l-2 border-l-blue-600 pl-3 ">
         <h2 className="text-3xl text-black">Few Reasons</h2>
         <h2 className="text-3xl text-blue-800">Why Choose Us</h2>

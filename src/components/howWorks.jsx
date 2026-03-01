@@ -13,7 +13,7 @@ import HighCustom from "../img/how/hight_cust.png";
 
 export default function HowWorks() {
   return (
-    <section>
+    <section id="how_we_works">
       <div className="h-124 bg-white relative">
         <h2 className="text-4xl flex justify-center items-center gap-5 border-l-2 border-l-blue-600 text-blue-700 max-w-90 mx-auto">
           How<span className="text-black">we Works</span>

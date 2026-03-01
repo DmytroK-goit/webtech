@@ -51,7 +51,10 @@ export default function Team() {
   ];
 
   return (
-    <section className="bg-white h-200 flex items-center justify-center">
+    <section
+      id="team"
+      className="bg-white h-200 flex items-center justify-center"
+    >
       <div className="flex flex-col w-75">
         <h2 className="text-[40px] max-w-47 text-[#141d28] border-l-2 border-blue-700 pl-7">
           <span className="text-[#377dff]">Our</span> Best Workers
