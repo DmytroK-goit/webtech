@@ -91,7 +91,7 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
 
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 pt-10 px-6">
         <div className="lg:w-[70%]">
-          <div className="relative h-65 md:h-75 lg:h-80 overflow-hidden rounded-xl">
+          <div className="relative h-60 md:h-65 lg:h-70 overflow-hidden rounded-xl">
             <Image
               src={activeNews.photo}
               alt={activeNews.title}

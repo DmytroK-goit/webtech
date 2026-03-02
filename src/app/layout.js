@@ -1,5 +1,5 @@
 import { Poppins, Montserrat } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const poppins = Poppins({
