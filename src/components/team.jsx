@@ -53,9 +53,9 @@ export default function Team() {
   return (
     <section
       id="team"
-      className="bg-white h-200 flex items-center justify-center"
+      className="bg-white h-150 md:h-180 lg:h-200 flex items-center justify-center gap-4"
     >
-      <div className="flex flex-col w-75">
+      <div className="flex flex-col md:flex-col lg:items-center lg:justify-between gap-8 mb-12">
         <h2 className="text-[40px] max-w-47 text-[#141d28] border-l-2 border-blue-700 pl-7">
           <span className="text-[#377dff]">Our</span> Best Workers
         </h2>
@@ -103,10 +103,12 @@ export default function Team() {
               </div>
             </div>
 
-            <h3 className="text-center text-2xl text-[#141d28] pt-8">
+            <h3 className="text-center md:text-2xl text-[#141d28] pt-8">
               {member.name}
             </h3>
-            <p className="text-center text-[#5c6f87] pt-2.5">{member.role}</p>
+            <p className="text-center text-[14px] md:text-[16px] text-[#5c6f87] pt-2.5">
+              {member.role}
+            </p>
           </li>
         ))}
       </ul>
