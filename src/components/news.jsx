@@ -84,13 +84,16 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
   }, [activeNews]);
 
   return (
-    <section id="news" className="bg-[#f5f7fb] py-16 md:py-24 h-250">
+    <section
+      id="news"
+      className="bg-[#f5f7fb] py-16 md:py-24 h-280 md:h-260 h-250"
+    >
       <h2 className="text-3xl md:text-4xl lg:text-5xl flex items-center justify-center pl-4 border-l-4 border-blue-700 w-fit mx-auto text-[#377dff] gap-3">
         Our <span className="text-[#141d28]">News</span>
       </h2>
 
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 pt-10 px-6">
-        <div className="lg:w-[70%]">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 pt-10 px-6">
+        <div className="md:w-[70%]">
           <div className="relative h-60 md:h-65 lg:h-70 overflow-hidden rounded-xl">
             <Image
               src={activeNews.photo}
@@ -129,7 +132,7 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
           </button>
         </div>
 
-        <div className="lg:w-[30%] h-105 md:h-120 lg:h-130">
+        <div className="md:w-[30%] h-105 md:h-120 lg:h-130">
           <Swiper
             direction="vertical"
             slidesPerView={3}

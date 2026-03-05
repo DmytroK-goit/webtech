@@ -3,11 +3,15 @@ export default function Reasons() {
   return (
     <section
       id="why_us"
-      className={`${s.reasons_section} w-full h-310 md:h-350 lg:h-310 pt-10 pl-20 lgd:pt-37 lg:pl-30`}
+      className={`${s.reasons_section} w-full py-16 px-6 md:px-12 lg:px-20`}
     >
-      <div className=" flex flex-col w-1/2 md:w-1/3 border-l-2 border-l-blue-600 pl-3 ">
-        <h2 className="md:text-3xl text-black">Few Reasons</h2>
-        <h2 className="md:text-3xl text-blue-800">Why Choose Us</h2>
+      <div className="flex flex-col w-[100%] md:w-1/3 border-l-2 border-l-blue-600 pl-3 ">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-black">
+          Few Reasons
+        </h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-blue-800">
+          Why Choose Us
+        </h2>
       </div>
       <div className="pt-10 md:pt-30 flex flex-col gap-6 max-w-1/2 md:max-w-1/3">
         <div className="flex flex-col gap-5">

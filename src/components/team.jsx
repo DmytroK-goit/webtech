@@ -79,15 +79,33 @@ export default function Team() {
                 height={356}
               />
 
-              <div className="absolute bottom-0 left-0 w-full bg-[#377dff]/90 flex justify-center gap-4 py-3 translate-y-full group-hover:translate-y-0 transition duration-300">
+              <div className="absolute bottom-0 left-0 w-full bg-[#377dff]/90 flex gap-2 py-2 justify-center md:gap-4 md:py-3 translate-y-full group-hover:translate-y-0 transition duration-300">
                 <Link href={member.socials.facebook}>
-                  <Image src={Facebook} alt="Facebook" width={20} height={20} />
+                  <Image
+                    src={Facebook}
+                    alt="Facebook"
+                    width={20}
+                    height={20}
+                    className="w-[10px] md:w-[20px]"
+                  />
                 </Link>
                 <Link href={member.socials.telegram}>
-                  <Image src={Telegram} alt="Telegram" width={20} height={20} />
+                  <Image
+                    src={Telegram}
+                    alt="Telegram"
+                    width={20}
+                    height={20}
+                    className="w-[10px] md:w-[20px]"
+                  />
                 </Link>
                 <Link href={member.socials.linkedin}>
-                  <Image src={Linkedin} alt="Linkedin" width={20} height={20} />
+                  <Image
+                    src={Linkedin}
+                    alt="Linkedin"
+                    width={20}
+                    height={20}
+                    className="w-[10px] md:w-[20px]"
+                  />
                 </Link>
                 <Link href={member.socials.instagram}>
                   <Image
@@ -95,10 +113,17 @@ export default function Team() {
                     alt="Instagram"
                     width={20}
                     height={20}
+                    className="w-[10px] md:w-[20px]"
                   />
                 </Link>
                 <Link href={member.socials.youtube}>
-                  <Image src={Youtube} alt="Youtube" width={20} height={20} />
+                  <Image
+                    src={Youtube}
+                    alt="Youtube"
+                    width={20}
+                    height={20}
+                    className="w-[10px] md:w-[20px]"
+                  />
                 </Link>
               </div>
             </div>
