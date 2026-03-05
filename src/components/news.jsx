@@ -84,15 +84,12 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
   }, [activeNews]);
 
   return (
-    <section
-      id="news"
-      className="bg-[#f5f7fb] py-16 md:py-24 h-280 md:h-260 h-250"
-    >
+    <section id="news" className="bg-[#f5f7fb] py-16 md:py-24">
       <h2 className="text-3xl md:text-4xl lg:text-5xl flex items-center justify-center pl-4 border-l-4 border-blue-700 w-fit mx-auto text-[#377dff] gap-3">
         Our <span className="text-[#141d28]">News</span>
       </h2>
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 pt-10 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10 pt-10 px-4 md:px-6 lg:px-0">
         <div className="md:w-[70%]">
           <div className="relative h-60 md:h-65 lg:h-70 overflow-hidden rounded-xl">
             <Image
@@ -106,44 +103,44 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
             </span>
           </div>
 
-          <h3 className="text-xl md:text-2xl mt-6 font-semibold text-[#0b1320]">
+          <h3 className="text-xl md:text-2xl mt-4 md:mt-6 font-semibold text-[#0b1320]">
             {activeNews.title}
           </h3>
 
-          <div className="flex gap-6 text-gray-500 text-sm mt-2">
+          <div className="flex gap-4 text-gray-500 text-sm mt-1 md:mt-2 flex-wrap">
             <span>{activeNews.author}</span>
             <span>{activeNews.date}</span>
           </div>
 
-          <p
+          <div
             className={`
-              mt-4 text-gray-600 leading-relaxed max-w-xl transition-all
-              ${expanded ? "" : "line-clamp-3"}
+              mt-4 text-gray-600 leading-relaxed max-w-xl overflow-hidden transition-all duration-500
+              ${expanded ? "max-h-[500px] md:max-h-[600px]" : "max-h-24 md:max-h-36"}
             `}
           >
             {activeNews.desc}
-          </p>
+          </div>
 
           <button
             onClick={() => setExpanded(!expanded)}
-            className="mt-6 text-sm tracking-widest text-gray-800 hover:text-blue-600 cursor-pointer border-2 border-blue-700 px-5 py-2 transition hover:bg-blue-50"
+            className="mt-4 md:mt-6 text-sm tracking-widest text-gray-800 hover:text-blue-600 cursor-pointer border-2 border-blue-700 px-5 py-2 transition hover:bg-blue-50"
           >
             {expanded ? "SHOW LESS" : "VIEW DETAILS"}
           </button>
         </div>
 
-        <div className="md:w-[30%] h-105 md:h-120 lg:h-130">
+        <div className="md:w-[30%] mt-6 md:mt-0 h-34 md:h-120 lg:h-130">
           <Swiper
             direction="vertical"
             slidesPerView={3}
-            spaceBetween={16}
-            className="h-full"
+            spaceBetween={12}
+            className="h-full md:h-full"
           >
             {news.map((item) => (
               <SwiperSlide key={item.id}>
                 <div
                   onClick={() => setActiveNews(item)}
-                  className="relative h-36 md:h-40 cursor-pointer overflow-hidden rounded-lg group"
+                  className="relative h-12 md:h-40 cursor-pointer overflow-hidden rounded-lg group"
                 >
                   <Image
                     src={item.photo}
@@ -151,17 +148,14 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
                     fill
                     className="object-cover group-hover:scale-105 transition"
                   />
-
-                  <div className="absolute inset-0 bg-[#0b1320]/70 p-3 flex flex-col justify-end">
+                  <div className="absolute inset-0 bg-[#0b1320]/70 p-2 md:p-3 flex flex-col justify-end">
                     <span className="text-xs text-blue-400 mb-1">
                       {item.tag}
                     </span>
-
-                    <h4 className="text-white text-sm leading-snug line-clamp-2">
+                    <h4 className="text-white text-xs md:text-sm leading-snug line-clamp-2">
                       {item.title}
                     </h4>
-
-                    <div className="flex justify-between text-[11px] text-gray-300 mt-1">
+                    <div className="flex justify-between text-[10px] md:text-[11px] text-gray-300 mt-1">
                       <span>{item.author}</span>
                       <span>{item.date}</span>
                     </div>
