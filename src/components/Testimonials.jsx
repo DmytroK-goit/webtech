@@ -7,7 +7,8 @@ import Image from "next/image";
 import Person1 from "../img/testimonials/james.png";
 import Person2 from "../img/testimonials/jorg.png";
 import Person3 from "../img/testimonials/ronald.png";
-
+import { motion } from "framer-motion";
+import { sectionAnimation } from "./howWorks";
 const testimonials = [
   {
     id: 1,
@@ -34,7 +35,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-20 md:py-34 ">
+    <motion.section
+      variants={sectionAnimation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="bg-white py-20 md:py-34 "
+    >
       <h2 className="flex items-center justify-center w-[180px] md:w-[280px] lg:[400px] mx-auto gap-3 text-center pl-3 text-blue-700 text-2xl md:text-3xl lg:text-4xl border-l-4 border-l-blue-700 ">
         Our <span className="text-black">Testimonials</span>
       </h2>
@@ -102,6 +109,6 @@ export default function Testimonials() {
           })}
         </Swiper>
       </div>
-    </section>
+    </motion.section>
   );
 }

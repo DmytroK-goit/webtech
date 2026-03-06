@@ -1,7 +1,14 @@
+"use client";
+import { motion } from "framer-motion";
 import s from "../scss/reasons.module.scss";
+import { sectionAnimation } from "./howWorks";
 export default function Reasons() {
   return (
-    <section
+    <motion.section
+      variants={sectionAnimation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       id="why_us"
       className={`${s.reasons_section} w-full py-16 px-6 md:px-12 lg:px-20`}
     >
@@ -44,6 +51,6 @@ export default function Reasons() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

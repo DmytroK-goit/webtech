@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Gary from "../img/team/hary.png";
 import James from "../img/team/james.png";
@@ -7,8 +8,10 @@ import Telegram from "../img/team/telegram.png";
 import Linkedin from "../img/team/linkedin.png";
 import Instagram from "../img/team/instagram.png";
 import Youtube from "../img/team/youtube.png";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
+import { sectionAnimation } from "./howWorks";
 
 export default function Team() {
   const team = [
@@ -51,7 +54,11 @@ export default function Team() {
   ];
 
   return (
-    <section
+    <motion.section
+      variants={sectionAnimation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       id="team"
       className="bg-white h-150 md:h-180 lg:h-200 flex items-center justify-center gap-4"
     >
@@ -137,6 +144,6 @@ export default function Team() {
           </li>
         ))}
       </ul>
-    </section>
+    </motion.section>
   );
 }

@@ -1,63 +1,76 @@
-import Image, { StaticImageData } from "next/image";
-
-import planning from "../img/how/planning.png";
-import design from "../img/how/design.png";
-import development from "../img/how/development.png";
-
-import Vector from "../img/how/vector.png";
-import VectorS from "../img/how/vector_s.png";
-
-import Awsom from "../img/how/awsom.png";
-import Seo from "../img/how/seo.png";
-import Web from "../img/how/web.png";
-import Star from "../img/how/star.png";
-import ResponseFull from "../img/how/res_full.png";
-import HighCustom from "../img/how/hight_cust.png";
+'use client';
+import Image, { StaticImageData } from 'next/image';
+import planning from '../img/how/planning.png';
+import design from '../img/how/design.png';
+import development from '../img/how/development.png';
+import Vector from '../img/how/vector.png';
+import VectorS from '../img/how/vector_s.png';
+import Awsom from '../img/how/awsom.png';
+import Seo from '../img/how/seo.png';
+import Web from '../img/how/web.png';
+import Star from '../img/how/star.png';
+import ResponseFull from '../img/how/res_full.png';
+import HighCustom from '../img/how/hight_cust.png';
+import { motion } from 'framer-motion';
 
 const steps = [
-  { img: planning, title: "Planning" },
-  { img: design, title: "Design" },
-  { img: development, title: "Development" },
+  { img: planning, title: 'Planning' },
+  { img: design, title: 'Design' },
+  { img: development, title: 'Development' },
 ];
 
 const features = [
   {
     img: Seo,
-    title: "SEO Ready Code",
-    text: "Clean and optimized structure for search engines.",
+    title: 'SEO Ready Code',
+    text: 'Clean and optimized structure for search engines.',
   },
   {
     img: ResponseFull,
-    title: "Fully Responsive",
-    text: "Perfect on desktop, tablet and mobile.",
+    title: 'Fully Responsive',
+    text: 'Perfect on desktop, tablet and mobile.',
   },
   {
     img: Awsom,
-    title: "Awesome Features",
-    text: "Dynamic elements, grids, video and more.",
+    title: 'Awesome Features',
+    text: 'Dynamic elements, grids, video and more.',
   },
   {
     img: Star,
-    title: "5-star support",
-    text: "Reliable and friendly support anytime.",
+    title: '5-star support',
+    text: 'Reliable and friendly support anytime.',
   },
   {
     img: HighCustom,
-    title: "High Customizability",
-    text: "Flexible architecture for custom needs.",
+    title: 'High Customizability',
+    text: 'Flexible architecture for custom needs.',
   },
   {
     img: Web,
-    title: "Up-to-date Software",
-    text: "Modern technologies and best practices.",
+    title: 'Up-to-date Software',
+    text: 'Modern technologies and best practices.',
   },
 ];
+export const sectionAnimation = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
 
 export default function HowWorks() {
   return (
-    <section id="how_we_works">
-      <div className="bg-white relative py-16 md:py-24">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl flex justify-center items-center gap-3 md:gap-5 border-l-2 border-blue-600 text-blue-700 max-w-fit mx-auto pl-4">
+    <motion.section
+      variants={sectionAnimation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      id="how_we_works"
+    >
+      <div className="relative bg-white py-16 md:py-24">
+        <h2 className="mx-auto flex max-w-fit items-center justify-center gap-3 border-l-2 border-blue-600 pl-4 text-2xl text-blue-700 md:gap-5 md:text-3xl lg:text-4xl">
           How <span className="text-black">We Work</span>
         </h2>
 
@@ -65,20 +78,20 @@ export default function HowWorks() {
           src={Vector}
           alt="Vector"
           width={100}
-          className="hidden xl:block absolute top-70 left-[35.5%]"
+          className="absolute top-70 left-[35.5%] hidden xl:block"
         />
         <Image
           src={VectorS}
           alt="Vector"
           width={100}
-          className="hidden xl:block absolute top-70 right-[35.5%]"
+          className="absolute top-70 right-[35.5%] hidden xl:block"
         />
 
-        <ul className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-32 items-center justify-center pt-16">
+        <ul className="flex flex-col items-center justify-center gap-12 pt-16 md:flex-row md:gap-16 lg:gap-32">
           {steps.map((step, index) => (
             <li
               key={index}
-              className="flex flex-col items-center text-center gap-4 w-full md:w-auto"
+              className="flex w-full flex-col items-center gap-4 text-center md:w-auto"
             >
               <Image
                 src={step.img}
@@ -87,47 +100,25 @@ export default function HowWorks() {
                 height={160}
                 className="rounded-full"
               />
-              <p className="text-xl md:text-2xl text-[#141d28] font-medium">
-                {step.title}
-              </p>
+              <p className="text-xl font-medium text-[#141d28] md:text-2xl">{step.title}</p>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="bg-[#233142] py-16 md:py-24 text-white">
-        <ul
-          className="
-            grid 
-            grid-cols-1 
-            sm:grid-cols-2 
-            lg:grid-cols-3 
-            gap-8 
-            max-w-6xl 
-            mx-auto 
-            px-6
-          "
-        >
+      <div className="bg-[#233142] py-16 text-white md:py-24">
+        <ul className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <li key={index} className="flex gap-4 items-start">
-              <Image
-                src={feature.img}
-                alt={feature.title}
-                width={45}
-                height={45}
-              />
+            <li key={index} className="flex items-start gap-4">
+              <Image src={feature.img} alt={feature.title} width={45} height={45} />
               <div className="flex flex-col gap-2">
-                <h4 className="text-lg md:text-xl font-semibold">
-                  {feature.title}
-                </h4>
-                <p className="text-sm md:text-base text-gray-300">
-                  {feature.text}
-                </p>
+                <h4 className="text-lg font-semibold md:text-xl">{feature.title}</h4>
+                <p className="text-sm text-gray-300 md:text-base">{feature.text}</p>
               </div>
             </li>
           ))}
         </ul>
       </div>
-    </section>
+    </motion.section>
   );
 }

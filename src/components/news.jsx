@@ -6,7 +6,8 @@ import Secur from "../img/news/security.png";
 import New from "../img/news/new.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
+import { motion } from "framer-motion";
+import { sectionAnimation } from "./howWorks";
 export default function News() {
   const news = [
     {
@@ -84,7 +85,14 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
   }, [activeNews]);
 
   return (
-    <section id="news" className="bg-[#f5f7fb] py-16 md:py-24">
+    <motion.section
+      variants={sectionAnimation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      id="news"
+      className="bg-[#f5f7fb] py-16 md:py-24"
+    >
       <h2 className="text-3xl md:text-4xl lg:text-5xl flex items-center justify-center pl-4 border-l-4 border-blue-700 w-fit mx-auto text-[#377dff] gap-3">
         Our <span className="text-[#141d28]">News</span>
       </h2>
@@ -166,6 +174,6 @@ As digital ecosystems become more interconnected, organizations that adopt emerg
           </Swiper>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

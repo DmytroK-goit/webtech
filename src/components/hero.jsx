@@ -1,9 +1,15 @@
+"use client";
 import Link from "next/link";
 import s from "../scss/hero.module.scss";
+import ModalContact from "./ModalContact";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const [open, setOpen] = useState(false);
   return (
-    <section
+    <motion.section
+      layout
       className={`
         ${s.hero_section}
         w-full
@@ -35,10 +41,9 @@ export default function Hero() {
         Always on the lookout for the hi-tech advancements. Build not only a
         product that can sell well, but a platform through which to deliver it.
       </p>
-
-      {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 pt-10 md:pt-14">
         <Link
+          onClick={() => setOpen(true)}
           href="/"
           className="
             flex items-center justify-center
@@ -54,7 +59,7 @@ export default function Hero() {
         </Link>
 
         <Link
-          href="/"
+          href="#how_we_works"
           className="
             flex items-center justify-center
             px-6 h-11 md:h-12
@@ -67,7 +72,8 @@ export default function Hero() {
         >
           Learn More
         </Link>
+        <ModalContact isOpen={open} onClose={() => setOpen(false)} />
       </div>
-    </section>
+    </motion.section>
   );
 }
