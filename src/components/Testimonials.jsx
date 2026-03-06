@@ -35,7 +35,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="bg-white py-20 md:py-34 ">
-      <h2 className="flex items-center justify-center w-2/3 md:w-1/4 mx-auto gap-3 text-center pl-3 text-blue-700 text-2xl md:text-3xl lg:text-4xl border-l-4 border-l-blue-700 ">
+      <h2 className="flex items-center justify-center w-[180px] md:w-[280px] lg:[400px] mx-auto gap-3 text-center pl-3 text-blue-700 text-2xl md:text-3xl lg:text-4xl border-l-4 border-l-blue-700 ">
         Our <span className="text-black">Testimonials</span>
       </h2>
       <div className="max-w-3xl mx-auto text-center relative mt-20">
