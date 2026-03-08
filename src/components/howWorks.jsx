@@ -59,6 +59,31 @@ export const sectionAnimation = {
     transition: { duration: 0.6 },
   },
 };
+export const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+export const stepAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+};
 
 export default function HowWorks() {
   return (
@@ -89,8 +114,10 @@ export default function HowWorks() {
 
         <ul className="flex flex-col items-center justify-center gap-12 pt-16 md:flex-row md:gap-16 lg:gap-32">
           {steps.map((step, index) => (
-            <li
+            <motion.li
               key={index}
+              variants={stepAnimation}
+              whileHover={{ scale: 1.08, y: -5 }}
               className="flex w-full flex-col items-center gap-4 text-center md:w-auto"
             >
               <Image
@@ -101,7 +128,7 @@ export default function HowWorks() {
                 className="rounded-full"
               />
               <p className="text-xl font-medium text-[#141d28] md:text-2xl">{step.title}</p>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>

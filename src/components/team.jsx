@@ -11,7 +11,7 @@ import Youtube from '../img/team/youtube.png';
 import { motion } from 'framer-motion';
 
 import Image from 'next/image';
-import { sectionAnimation } from './howWorks';
+import { sectionAnimation, stepAnimation } from './howWorks';
 
 export default function Team() {
   const team = [
@@ -66,18 +66,26 @@ export default function Team() {
         <h2 className="text-26px max-w-20 border-l-2 border-blue-700 pl-7 text-[#141d28] md:max-w-30 md:text-[30px] lg:max-w-47 lg:text-[40px]">
           <span className="text-[#377dff]">Our</span> Best Workers
         </h2>
-
-        <Link
-          href="/"
-          className="mt-10 flex w-24 items-center justify-center border-2 border-[#377dff] py-2 text-[#141d28] md:mt-18 md:w-30 md:py-4 lg:w-40"
-        >
-          View Team
-        </Link>
+        <motion.div variants={stepAnimation} whileHover={{ scale: 1.08, y: -5 }}>
+          {' '}
+          <Link
+            title="In developing"
+            href="/"
+            className="mt-10 flex w-24 items-center justify-center border-2 border-[#377dff] py-2 text-[#141d28] md:mt-18 md:w-30 md:py-4 lg:w-40"
+          >
+            View Team
+          </Link>
+        </motion.div>
       </div>
 
       <ul className="flex gap-4">
         {team.map((member) => (
-          <li key={member.name} className="flex flex-col items-center">
+          <motion.li
+            variants={stepAnimation}
+            whileHover={{ scale: 1.08, y: -5 }}
+            key={member.name}
+            className="flex flex-col items-center"
+          >
             <div className="group relative overflow-hidden">
               <Image src={member.photo} alt={member.name} width={286} height={356} />
 
@@ -134,7 +142,7 @@ export default function Team() {
             <p className="pt-2.5 text-center text-[14px] text-[#5c6f87] md:text-[16px]">
               {member.role}
             </p>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </motion.section>
